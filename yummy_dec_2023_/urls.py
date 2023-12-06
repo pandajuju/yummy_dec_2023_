@@ -16,14 +16,14 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from yummy.views import main
 
 from yummy_dec_2023_ import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main),
+    path('', include('yummy.urls')),
 ]
 
 
